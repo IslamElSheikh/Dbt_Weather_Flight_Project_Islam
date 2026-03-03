@@ -56,4 +56,4 @@ joined AS (
 
 SELECT *
 FROM joined
-ORDER BY flight_date, origin;
+ORDER BY flight_date, origin
