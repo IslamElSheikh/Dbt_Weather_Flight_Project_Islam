@@ -2,7 +2,7 @@ WITH daily_raw AS (
     SELECT
             airport_code,
             station_id,
-            jsonb_array_elements(extracted_data -> 'data') AS json_data
+            jsonb_array_elements((extracted_data -> 'data')::jsonb) AS json_data
     FROM {{source('weather_data', 'weather_daily_jonas')}}
 ),
 daily_flattened AS (
