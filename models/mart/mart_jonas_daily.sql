@@ -30,6 +30,7 @@ weather AS (
         airport_code AS origin,
         precipitation_mm,
         avg_wind_speed_kmh,
+        max_snow_mm,
         max_temp_c,
         min_temp_c
     FROM {{ ref('prep_weather_daily') }}
@@ -46,6 +47,7 @@ joined AS (
         f.avg_arr_delay_min,
         w.precipitation_mm,
         w.avg_wind_speed_kmh,
+        w.max_snow_mm,
         w.max_temp_c,
         w.min_temp_c
     FROM flights_daily f
